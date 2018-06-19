@@ -14,25 +14,40 @@
     <div class="wrap">
         <header>必买大牌</header>
         <section>
-            <!-- <dl>
-                <dt><img src="imgs/1.jpg" alt=""></dt>
-                <dd>满300减70</dd>
-            </dl>
-            <dl>
-                <dt><img src="imgs/2.jpg" alt=""></dt>
-                <dd>满300减70</dd>
-            </dl>
-            <dl>
-                <dt><img src="imgs/1.jpg" alt=""></dt>
-                <dd>满300减70</dd>
-            </dl> -->
+            <div class="cloths"></div>
+            <div class="content">
+                <div class="new">精选行业会场</div>
+                <div class="list">
+                    <div class="dl">
+                        <dl><dt><img src="imgs/2.jpg" alt=""></dt>
+                            <dd>
+                                <h3>
+                                    <h1>笔记本电脑</h1>
+                                    <h2>最高立减300元</h2>
+                                </h3>
+                                <span>Go</span>
+                            </dd>
+                        </dl>
+                        <dl><dt><img src="imgs/2.jpg" alt=""></dt>
+                            <dd>
+                                <h3>
+                                    <h1>笔记本电脑</h1>
+                                    <h2>最高立减300元</h2>
+                                </h3>
+                                <span>Go</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </div>
     <script src="./js/libs/require.js"></script>
     <script id="tpl" type="text/x-handlebars-template">
         {{#each this}}
         <dl>
-            <dt><img src="imgs/2.jpg" alt=""></dt>
+            <dt><img src="{{img}}" alt=""></dt>
             <dd>{{title}}</dd>
         </dl>
         {{/each}}

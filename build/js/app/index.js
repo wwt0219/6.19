@@ -1,1 +1,1 @@
-require(["jquery","handlebars"],function(s,a){s("body").css("background","#7e0505"),s.ajax({url:"/list",dataType:"json",success:function(e){var n=s("#tpl").html(),o=a.compile(n)(e);console.log(e),s("section").append(o)}})});
+require(["jquery","handlebars"],function(c,n){c("body").css("background","#7e0505"),c.ajax({url:"/list",dataType:"json",success:function(a){var e=c("#tpl").html(),s=n.compile(e)(a);c(".cloths").append(s)}})});

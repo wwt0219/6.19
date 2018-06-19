@@ -7,7 +7,6 @@ require(['jquery', 'handlebars'], function($, handlebars) {
             var tpl = $('#tpl').html();
             var template = handlebars.compile(tpl);
             var html = template(data);
-            console.log(data)
             $('.cloths').append(html);
         }
     })

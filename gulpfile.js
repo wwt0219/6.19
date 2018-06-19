@@ -21,6 +21,8 @@ gulp.task('server', ['devSass'], function() {
                 }
                 if (pathname === '/list') {
                     res.end(JSON.stringify(data))
+                } else if (pathname === '/arr') {
+                    JSON.stringify(data)
                 } else {
                     pathname = pathname === '/' ? '/index.html' : pathname;
                     res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)))
@@ -65,8 +67,9 @@ gulp.task('img', function() {
 
 //监听
 gulp.task('watch', function() {
-    gulp.watch('src/sass/*.scss', ['devSass'])
+    return gulp.watch('src/sass/*.scss', ['devSass'])
 })
+
 gulp.task('build', function(cb) {
     sequence('devSass', 'buildCss', 'watch', 'js', 'img', 'html', 'server', cb)
 })

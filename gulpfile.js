@@ -50,10 +50,23 @@ gulp.task('js', function() {
         .pipe(uglify())
         .pipe(gulp.dest('build/js'))
 })
+
+//HTML
 gulp.task('html', function() {
     return gulp.src('src/*.html')
         .pipe(gulp.dest('build'))
 })
+
+//imgs
+gulp.task('img', function() {
+    return gulp.src('src/imgs/*.jpg')
+        .pipe(gulp.dest('build/imgs'))
+})
+
+//监听
+gulp.task('watch', function() {
+    gulp.watch('src/sass/*.scss', ['devSass'])
+})
 gulp.task('build', function(cb) {
-    sequence('devSass', 'buildCss', 'js', 'html', 'server', cb)
+    sequence('devSass', 'buildCss', 'watch', 'js', 'img', 'html', 'server', cb)
 })

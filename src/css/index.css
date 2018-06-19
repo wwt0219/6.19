@@ -1,4 +1,92 @@
 html,
-body {
+body,
+.wrap {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 12px; }
+
+.wrap {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center; }
+
+section {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto; }
+  section .cloths {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; }
+    section .cloths dl {
+      width: 30%;
+      background: #ffffff;
+      margin: 3px 0 3px 3px;
+      padding: 10px 0 0 0; }
+      section .cloths dl dt {
+        width: 100%;
+        text-align: center; }
+        section .cloths dl dt img {
+          width: 80%;
+          height: auto; }
+      section .cloths dl dd {
+        width: 100%;
+        text-align: center;
+        color: red; }
+
+.content {
+  width: 100%; }
+  .content .new {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center; }
+  .content .list {
+    width: 100%; }
+    .content .list .dl {
+      width: 90%;
+      display: flex;
+      margin: 0 auto;
+      background: #fff; }
+      .content .list .dl dl {
+        flex: 1;
+        display: flex; }
+        .content .list .dl dl dt {
+          flex: 3; }
+          .content .list .dl dl dt img {
+            width: 90%;
+            height: auto; }
+        .content .list .dl dl dd {
+          flex: 7;
+          font-size: 14px;
+          font-weight: 300;
+          padding-left: 6px; }
+          .content .list .dl dl dd h2 {
+            color: red;
+            padding-bottom: 5px; }
+          .content .list .dl dl dd span {
+            width: 20px;
+            height: 10px;
+            line-height: 10px;
+            display: block;
+            background: red;
+            color: white;
+            border-radius: 10px;
+            padding: 2px 6px; }

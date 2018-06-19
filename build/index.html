@@ -6,10 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>武文婷</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="js/libs/flexible.js">
 </head>
 
 <body>
-    上课还是
+    <div class="wrap">
+        <header>必买大牌</header>
+        <section>
+            <!-- <dl>
+                <dt><img src="imgs/1.jpg" alt=""></dt>
+                <dd>满300减70</dd>
+            </dl>
+            <dl>
+                <dt><img src="imgs/2.jpg" alt=""></dt>
+                <dd>满300减70</dd>
+            </dl>
+            <dl>
+                <dt><img src="imgs/1.jpg" alt=""></dt>
+                <dd>满300减70</dd>
+            </dl> -->
+        </section>
+    </div>
+    <script src="./js/libs/require.js"></script>
+    <script id="tpl" type="text/x-handlebars-template">
+        {{#each this}}
+        <dl>
+            <dt><img src="imgs/2.jpg" alt=""></dt>
+            <dd>{{title}}</dd>
+        </dl>
+        {{/each}}
+    </script>
+    <script>
+        require(['./js/main.js'], function() {
+            require(['index'])
+        })
+    </script>
 </body>
 
 </html>

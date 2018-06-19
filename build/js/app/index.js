@@ -1,0 +1,1 @@
+require(["jquery","handlebars"],function(s,a){s("body").css("background","#7e0505"),s.ajax({url:"/list",dataType:"json",success:function(e){var n=s("#tpl").html(),o=a.compile(n)(e);console.log(e),s("section").append(o)}})});

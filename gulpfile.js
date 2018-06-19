@@ -9,8 +9,8 @@ var fs = require('fs');
 var url = require('url');
 var data = require('./data/data.json');
 var sequence = require('gulp-sequence');
-gulp.task('server', function() {
-    gulp.src('src')
+gulp.task('server', ['devSass'], function() {
+    gulp.src('build')
         .pipe(server({
             port: 8080,
             open: true,
@@ -30,6 +30,30 @@ gulp.task('server', function() {
 })
 
 //开发sass
-// gulp.task('devSass', function() {
+gulp.task('devSass', function() {
+    return gulp.src('src/sass/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('src/css'))
+})
 
-// })
+//线上css
+gulp.task('buildCss', function() {
+    return gulp.src('src/sass/*.scss')
+        .pipe(sass())
+        .pipe(minCss())
+        .pipe(gulp.dest('build/css'))
+})
+
+//压缩js
+gulp.task('js', function() {
+    return gulp.src('src/js/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'))
+})
+gulp.task('html', function() {
+    return gulp.src('src/*.html')
+        .pipe(gulp.dest('build'))
+})
+gulp.task('build', function(cb) {
+    sequence('devSass', 'buildCss', 'js', 'html', 'server', cb)
+})
